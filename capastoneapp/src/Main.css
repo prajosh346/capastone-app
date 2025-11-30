@@ -1,0 +1,276 @@
+.hero-section {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: #495E47;
+  padding: 80px 120px;
+  height: 450px;
+}
+
+/* TEXT SECTION */
+.hero-text {
+  width: 45%;
+  color: white;
+   text-align: right;    
+}
+
+.title {
+  font-size: 48px;
+  color: #F4CE14;
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.desc {
+  display: block;      /* makes span act like <p> */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 360px;
+  margin-left: auto;
+}
+
+.reserve-btn {
+  background-color: #F4CE14;
+  color: black;
+  border: none;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* IMAGE SECTION */
+.hero-image-wrapper {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 350px;
+  border-radius: 15px;
+  /* margin-top: 40px; */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.specials-section {
+  padding: 60px 80px;
+    height: 600px;
+  background-color: #ffffff;
+}
+
+/* Header row */
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.specials-title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.specials-btn {
+  background-color: #f4ce14;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Cards row */
+.specials-cards {
+  display: flex;
+  gap: 24px;
+}
+
+/* Single card */
+.special-card {
+  background-color: #f5f5f5;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.special-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.special-card-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;                  /* NEW: body fills the card height */
+}
+
+
+/* Title + price row */
+.special-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.special-card-title-row h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.price {
+  color: #ee9972;
+  font-size: 14px;
+}
+
+/* Description & footer */
+.special-card-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;                  /* NEW: pushes footer down */
+}
+
+.special-card-footer {
+  margin-top: auto;         /* NEW: sticks footer to bottom */
+  font-weight: 600;
+  font-size: 14px;
+}
+/* Simple responsive tweak */
+@media (max-width: 900px) {
+  .specials-section {
+    padding: 40px 20px;
+  }
+
+  .specials-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .special-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.testimonials-section {
+  height: 500px;                     /* As you requested */
+  background-color: #EDEFEE;
+  padding: 40px 80px;
+}
+
+.testimonials-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: 280px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.testimonial-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.testimonial-name {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-section {
+  height: 600px;                           /* fixed height */
+  background-color: #f4f4f4;
+  padding: 60px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* LEFT TEXT */
+.about-text {
+  width: 48%;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #495E47;
+  margin-bottom: 10px;
+}
+
+.about-location {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-description {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* RIGHT IMAGE — FIXED VERSION */
+.about-image-wrapper {
+  width: 48%;
+  height: 100%;                  /* 🔥 fill entire 600px height */
+  border-radius: 20px;
+  overflow: hidden;              /* 🔥 prevents image spilling out */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;                  /* 🔥 FIX: fills wrapper perfectly */
+  object-fit: cover;             /* keeps image nicely cropped */
+  display: block;
+}
