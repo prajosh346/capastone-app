@@ -1,3 +1,6 @@
+/* ----------------------------------- */
+/* HEADER BASE STYLES                  */
+/* ----------------------------------- */
 
 header {
   display: flex;
@@ -5,21 +8,28 @@ header {
   justify-content: center;
   gap: 10px;
   padding: 10px 20px;
-  height:100px;
+  height: 100px;
 }
 
-.logo{
-    margin-right:30px;
+.logo {
+  margin-right: 30px;
 }
+
 .logo img {
-  height: 50px; /* or whatever size */
+  height: 50px;
 }
+
 nav {
-    gap:30px;
+  gap: 30px;
 }
+
 nav li {
   font-weight: 600;
   cursor: pointer;
+}
+
+nav.desktop-nav {
+  display: block;
 }
 
 nav ul {
@@ -34,4 +44,166 @@ nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+}
+
+/* ----------------------------------- */
+/* HAMBURGER BUTTON                    */
+/* ----------------------------------- */
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------------------------------- */
+/* SIDEBAR MENU                        */
+/* ----------------------------------- */
+
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 18px rgba(0,0,0,0.22);
+  padding: 20px;
+  transform: translateX(-110%);
+  transition: transform 320ms cubic-bezier(.22,.9,.35,1);
+  z-index: 9999;
+  will-change: transform;
+}
+
+.sidebar-menu.open {
+  transform: translateX(0);
+}
+
+/* SIDEBAR HEADER FIXED ALIGNMENT */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Logo + text wrapper */
+.sidebar-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0; /* allow ellipsis */
+}
+
+.sidebar-header strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.sidebar-header img {
+  height: 36px !important;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.close-btn {
+  background: none;
+  border: 0;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* Sidebar links */
+
+.sidebar-menu nav,
+.sidebar-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu a {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ----------------------------------- */
+/* OVERLAY                              */
+/* ----------------------------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: 9998;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* prevent body scroll when sidebar open */
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* ----------------------------------- */
+/* MOBILE RESPONSIVE                   */
+/* ----------------------------------- */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    height: auto;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav.desktop-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+  }
+}
+
+/* ----------------------------------- */
+/* DESKTOP CLEANUP                     */
+/* ----------------------------------- */
+
+@media (min-width: 769px) {
+  .sidebar-menu,
+  .overlay {
+    display: none;
+  }
 }

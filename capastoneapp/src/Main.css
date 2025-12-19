@@ -1,17 +1,25 @@
+/* ============================
+   GLOBAL / RESET
+   ============================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================
+   HERO SECTION
+   ============================ */
 .hero-section {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: #495E47;
   padding: 80px 120px;
   height: 450px;
+  color: white;
 }
 
-/* TEXT SECTION */
 .hero-text {
   width: 45%;
-  color: white;
-   text-align: right;    
+  text-align: right;
 }
 
 .title {
@@ -27,7 +35,7 @@
 }
 
 .desc {
-  display: block;      /* makes span act like <p> */
+  display: block;
   line-height: 1.6;
   margin-bottom: 20px;
   max-width: 360px;
@@ -44,7 +52,6 @@
   cursor: pointer;
 }
 
-/* IMAGE SECTION */
 .hero-image-wrapper {
   width: 45%;
   display: flex;
@@ -55,16 +62,19 @@
 .hero-image {
   width: 350px;
   border-radius: 15px;
-  /* margin-top: 40px; */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  object-fit: cover;
+  max-height: 420px;
 }
+
+/* ============================
+   SPECIALS SECTION
+   ============================ */
 .specials-section {
   padding: 60px 80px;
-    height: 600px;
   background-color: #ffffff;
 }
 
-/* Header row */
 .specials-header {
   display: flex;
   justify-content: space-between;
@@ -86,13 +96,13 @@
   cursor: pointer;
 }
 
-/* Cards row */
 .specials-cards {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-/* Single card */
 .special-card {
   background-color: #f5f5f5;
   border-radius: 18px;
@@ -109,15 +119,13 @@
 }
 
 .special-card-body {
-  padding: 18px 18px 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1;                  /* NEW: body fills the card height */
+  flex: 1;
 }
 
-
-/* Title + price row */
 .special-card-title-row {
   display: flex;
   justify-content: space-between;
@@ -135,38 +143,23 @@
   font-size: 14px;
 }
 
-/* Description & footer */
 .special-card-desc {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
-  flex: 1;                  /* NEW: pushes footer down */
+  flex: 1;
 }
 
 .special-card-footer {
-  margin-top: auto;         /* NEW: sticks footer to bottom */
+  margin-top: auto;
   font-weight: 600;
   font-size: 14px;
 }
-/* Simple responsive tweak */
-@media (max-width: 900px) {
-  .specials-section {
-    padding: 40px 20px;
-  }
 
-  .specials-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .special-card {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-
+/* ============================
+   TESTIMONIALS SECTION
+   ============================ */
 .testimonials-section {
-  height: 500px;                     /* As you requested */
   background-color: #EDEFEE;
   padding: 40px 80px;
 }
@@ -182,6 +175,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .testimonial-card {
@@ -189,11 +183,10 @@
   padding: 20px;
   border-radius: 16px;
   width: 280px;
-  height: 300px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
@@ -202,7 +195,6 @@
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 12px;
 }
 
 .testimonial-name {
@@ -217,8 +209,10 @@
   color: #444;
 }
 
+/* ============================
+   ABOUT SECTION
+   ============================ */
 .about-section {
-  height: 600px;                           /* fixed height */
   background-color: #f4f4f4;
   padding: 60px 80px;
   display: flex;
@@ -230,10 +224,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  gap: 40px;
 }
 
-/* LEFT TEXT */
 .about-text {
   width: 48%;
 }
@@ -249,7 +242,6 @@
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .about-description {
@@ -259,18 +251,86 @@
   color: #444;
 }
 
-/* RIGHT IMAGE — FIXED VERSION */
 .about-image-wrapper {
   width: 48%;
-  height: 100%;                  /* 🔥 fill entire 600px height */
+  height: 400px;
   border-radius: 20px;
-  overflow: hidden;              /* 🔥 prevents image spilling out */
+  overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .about-image {
   width: 100%;
-  height: 100%;                  /* 🔥 FIX: fills wrapper perfectly */
-  object-fit: cover;             /* keeps image nicely cropped */
-  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================
+   RESPONSIVE RULES
+   ============================ */
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 60px 40px;
+    height: auto;
+    gap: 20px;
+  }
+  .hero-text, .hero-image-wrapper { width: 50%; }
+  .hero-image { width: 300px; max-height: 380px; }
+  .title { font-size: 40px; }
+
+  .specials-section { padding: 40px 20px; }
+  .specials-cards { justify-content: center; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* HERO */
+  .hero-section {
+    flex-direction: column-reverse;
+    padding: 30px 18px;
+    height: auto;
+    text-align: center;
+  }
+  .hero-text { width: 100%; text-align: center; }
+  .hero-image-wrapper { width: 100%; }
+  .hero-image {
+    width: 92%;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  }
+
+  .title { font-size: 28px; }
+  .sub-title { font-size: 18px; }
+  .desc { max-width: 100%; padding: 0 8px; }
+
+  /* SPECIALS */
+  .specials-section { padding: 30px 18px; }
+  .specials-header { flex-direction: column; text-align:center; gap: 15px; }
+  .specials-cards { flex-direction: column; align-items:center; }
+  .special-card { max-width: 340px; width:100%; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { padding: 30px 18px; }
+  .testimonials-container {
+    flex-direction: column;
+    gap: 25px;
+    align-items:center;
+  }
+
+  /* ABOUT */
+  .about-section { padding: 40px 18px; }
+  .about-content { flex-direction: column; gap: 20px; }
+  .about-text, .about-image-wrapper { width: 100%; }
+  .about-image-wrapper { height: 250px; }
+  .about-title { font-size: 32px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .title { font-size: 24px; }
+  .sub-title { font-size: 16px; }
+  .hero-section { padding: 22px 12px; }
+  .reserve-btn { padding: 8px 16px; }
 }

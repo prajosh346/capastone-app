@@ -16,3 +16,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* GLOBAL MOBILE FIX */
+* {
+  box-sizing: border-box;
+}
+
+section, div {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
