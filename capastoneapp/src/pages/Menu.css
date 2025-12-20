@@ -1,0 +1,89 @@
+/* Menu page styles */
+.menu-header{
+  text-align: center;
+  margin: 28px 0;
+}
+.menu-header h1{
+  color: #2b5a2b;
+  margin-bottom: 6px;
+}
+.menu-header p{
+  color: #555;
+}
+.menu-section{
+  margin: 22px 0;
+}
+.section-title{
+  margin: 0 0 12px;
+  color: #2b5a2b;
+}
+.menu-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.menu-card{
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+.menu-image{
+  flex: 0 0 120px;
+  overflow: hidden;
+}
+.menu-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.menu-info{
+  padding: 12px 14px;
+  flex: 1 1 auto;
+}
+.menu-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.menu-name{
+  margin: 0;
+  font-size: 1.05rem;
+}
+.menu-price{
+  color: #444;
+  font-weight: 700;
+}
+.menu-desc{
+  margin: 8px 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+.menu-cta{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 26px 0 60px;
+}
+.btn{ /* reuse simple button style used elsewhere */
+  display: inline-block;
+  background: #f4d35e;
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-outline{
+  background: transparent;
+  border: 2px solid #f4d35e;
+}
+
+@media (max-width: 760px){
+  .menu-grid{
+    grid-template-columns: 1fr;
+  }
+  .menu-image{ flex: 0 0 100px; }
+}
