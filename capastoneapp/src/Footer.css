@@ -29,6 +29,31 @@
   text-decoration: underline;
 }
 
+.newsletter {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.newsletter p {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+}
+
 .footer-copy {
   margin-top: 20px;
   opacity: 0.7;

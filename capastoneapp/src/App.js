@@ -9,6 +9,7 @@ import AboutApp from "./pages/About";
 import ContactApp from "./pages/Contact";
 import ReservationsApp from "./pages/Reservation";
 import OrderOnlineApp from "./pages/OrderOnline";
+import ReviewsApp from "./pages/Reviews";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<ContactApp />} />
           <Route path="/reservation" element={<ReservationsApp/>}/>
            <Route path="/order" element={<OrderOnlineApp/>}/>
+           <Route path="/reviews" element={<ReviewsApp/>}/>
         </Routes>
         <FooterApp />
       

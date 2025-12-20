@@ -23,6 +23,9 @@ const NavApp = () => {
             <Link to="/order">Order online</Link>
           </li>
           <li>
+            <Link to="/reviews">Reviews</Link>
+          </li>
+          <li>
             <Link to="/contact">Contact</Link>
           </li>
         </ul>

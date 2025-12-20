@@ -7,6 +7,11 @@ const ReservationsApp = () => {
     const [confirmed, setConfirmed] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((s) => ({ ...s, [name]: value }));
+    };
+
     const validate = () => {
         if (!form.name.trim()) return 'Please enter your name.';
         if (!form.date) return 'Please select a date.';
