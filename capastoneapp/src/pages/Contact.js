@@ -2,6 +2,9 @@ import "../css folders/contact.css";
 function Contact() {
   return (
     <main className="contact-page">
+      <div className="breadcrumb">
+        <a href="/">Home</a> &gt; <span>Contact</span>
+      </div>
       <div className="contact-content">
         <h1>Contact Us</h1>
         <p className="contact-subtitle">

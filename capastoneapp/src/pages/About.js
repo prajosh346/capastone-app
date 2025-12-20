@@ -5,6 +5,9 @@ import restaurantImg from '../assets/icons_assets/restaurant.jpg';
 const AboutApp = () => {
     return (
         <main className="about-page">
+            <div className="breadcrumb container">
+                <a href="/">Home</a> &gt; <span>About</span>
+            </div>
             <section className="about-hero">
                 <div className="hero-inner">
                     <h1>Little Lemon</h1>

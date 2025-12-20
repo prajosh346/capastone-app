@@ -4,6 +4,19 @@
   padding-bottom: 48px;
 }
 
+.breadcrumb {
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.breadcrumb a {
+  color: #2b5a2b;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -27,6 +40,10 @@
 .menu-header p{
   color: #555;
   margin: 0;
+}
+.menu-header .back-home {
+  margin-top: 10px;
+  display: inline-block;
 }
 
 /* Sections and grid */

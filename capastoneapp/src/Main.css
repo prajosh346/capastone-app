@@ -52,6 +52,12 @@ img { max-width: 100%; height: auto; display: block; }
   cursor: pointer;
 }
 
+.reserve-btn-link,
+.specials-btn-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .hero-image-wrapper {
   width: 45%;
   display: flex;

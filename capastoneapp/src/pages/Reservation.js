@@ -5,11 +5,7 @@ const ReservationsApp = () => {
     const [form, setForm] = useState({ name: '', date: '', time: '', people: 2, contact: '' });
     const [error, setError] = useState('');
     const [confirmed, setConfirmed] = useState(null);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm((s) => ({ ...s, [name]: value }));
-    };
+    const [loading, setLoading] = useState(false);
 
     const validate = () => {
         if (!form.name.trim()) return 'Please enter your name.';
@@ -19,19 +15,32 @@ const ReservationsApp = () => {
         return '';
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const v = validate();
-        if (v) { setError(v); return; }
-        setError('');
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const v = validate();
+    if (v) { setError(v); return; }
+    setError('');
+    setLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      if (Math.random() > 0.1) {
         setConfirmed({ ...form });
-    };
+      } else {
+        setError('Failed to submit reservation. Please try again.');
+      }
+      setLoading(false);
+    }, 2000);
+  };
 
     return (
         <main className="reservation-page container">
+            <div className="breadcrumb">
+                <a href="/">Home</a> &gt; <span>Reservations</span>
+            </div>
             <header className="res-header">
                 <h1>Reserve a Table</h1>
                 <p>Book a table quickly — we'll confirm your reservation shortly.</p>
+                <a href="/" className="btn back-home">Back to Home</a>
             </header>
 
             {confirmed ? (
@@ -41,7 +50,10 @@ const ReservationsApp = () => {
                         Thanks, <strong>{confirmed.name}</strong>. We've reserved a table for <strong>{confirmed.people}</strong> on <strong>{confirmed.date}</strong> at <strong>{confirmed.time}</strong>.
                     </p>
                     <p>We will contact you at: <strong>{confirmed.contact}</strong></p>
-                    <button className="btn" onClick={() => { setConfirmed(null); setForm({ name: '', date: '', time: '', people: 2, contact: '' }); }}>Make another reservation</button>
+                    <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+                        <button className="btn" onClick={() => { setConfirmed(null); setForm({ name: '', date: '', time: '', people: 2, contact: '' }); }}>Make another reservation</button>
+                        <a href="/menu" className="btn btn-outline">View Menu</a>
+                    </div>
                 </section>
             ) : (
                 <form className="res-form" onSubmit={handleSubmit} noValidate>
@@ -76,7 +88,9 @@ const ReservationsApp = () => {
                     </div>
 
                     <div className="res-actions">
-                        <button type="submit" className="btn">Confirm Reservation</button>
+                        <button type="submit" className="btn" disabled={loading}>
+                            {loading ? 'Submitting...' : 'Confirm Reservation'}
+                        </button>
                     </div>
                 </form>
             )}

@@ -35,9 +35,13 @@ const menuData = [
 const MenuApp = () => {
   return (
     <main className="menu-page">
+      <div className="breadcrumb container">
+        <a href="/">Home</a> &gt; <span>Menu</span>
+      </div>
       <header className="menu-header container">
         <h1>Our Menu</h1>
         <p>Seasonal Mediterranean dishes prepared with fresh, local ingredients.</p>
+        <a href="/" className="btn back-home">Back to Home</a>
       </header>
 
       <section className="menu-list container">
@@ -59,7 +63,7 @@ const MenuApp = () => {
                     </div>
                     <p className="menu-desc">{item.desc}</p>
                     <div className="menu-actions">
-                      <a href="/orderonline" className="btn">Order</a>
+                      <a href="/order" className="btn">Order</a>
                     </div>
                   </div>
                 </article>

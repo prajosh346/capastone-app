@@ -1,5 +1,6 @@
 import React from "react";
 import "./Main.css";
+import { Link } from "react-router-dom";
 import restauranfood from "./assets/icons_assets/restauranfood.jpg";
 import greekSaladImg from "./assets/icons_assets/greek salad.jpg";
 import bruschettaImg from "./assets/icons_assets/bruchetta.svg";
@@ -21,18 +22,22 @@ const MainApp = () => {
               traditional recipes served with a modern twist.
             </span>
 
-            <button class="reserve-btn">Reserve a Table</button>
+            <Link to="/reservation" className="reserve-btn-link">
+              <button class="reserve-btn">Reserve a Table</button>
+            </Link>
           </div>
 
           <div class="hero-image-wrapper">
-            <img src={restauranfood} class="hero-image" />
+            <img src={restauranfood} class="hero-image" alt="Delicious restaurant food" />
           </div>
         </section>
 
         <section className="specials-section">
           <div className="specials-header">
             <h2 className="specials-title">This weeks specials!</h2>
-            <button className="specials-btn">Online Menu</button>
+            <Link to="/menu" className="specials-btn-link">
+              <button className="specials-btn">Online Menu</button>
+            </Link>
           </div>
 
           <div className="specials-cards">

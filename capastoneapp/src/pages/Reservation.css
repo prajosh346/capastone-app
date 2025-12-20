@@ -1,6 +1,30 @@
 /* Reservation page styles */
+.reservation-page{
+  background: #fffaf7;
+  padding-bottom: 48px;
+}
+
+.breadcrumb {
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.breadcrumb a {
+  color: #2b5a2b;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
 .res-header{ text-align:center; margin:22px 0; }
 .res-header h1{ color:#2b5a2b; }
+.res-header .back-home { margin-top:10px; display:inline-block; }
 .res-form{ max-width:820px; margin:0 auto; background:#fff; padding:18px; border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.06);} 
 .res-form label{ display:block; margin-bottom:12px; color:#333; font-weight:600; }
 .res-form input{ display:block; width:100%; padding:10px 12px; margin-top:6px; border:1px solid #e6e6e6; border-radius:6px; }

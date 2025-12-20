@@ -4,6 +4,20 @@
   padding: 56px 0;
   text-align: center;
 }
+
+.breadcrumb {
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.breadcrumb a {
+  color: #2b5a2b;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 .about-hero .hero-inner{
   max-width: 900px;
   margin: 0 auto;
