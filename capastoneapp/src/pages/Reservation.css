@@ -1,0 +1,16 @@
+/* Reservation page styles */
+.res-header{ text-align:center; margin:22px 0; }
+.res-header h1{ color:#2b5a2b; }
+.res-form{ max-width:820px; margin:0 auto; background:#fff; padding:18px; border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.06);} 
+.res-form label{ display:block; margin-bottom:12px; color:#333; font-weight:600; }
+.res-form input{ display:block; width:100%; padding:10px 12px; margin-top:6px; border:1px solid #e6e6e6; border-radius:6px; }
+.res-row{ display:flex; gap:12px; }
+.res-row label{ flex:1; }
+.res-actions{ text-align:right; margin-top:12px; }
+.res-error{ background:#ffeaea; color:#b00020; padding:8px 10px; border-radius:6px; margin-bottom:10px; }
+.res-confirm{ max-width:820px; margin:10px auto; background:#fff; padding:18px; border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.06); text-align:center; }
+.btn{ display:inline-block; background:#f4d35e; color:#111; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; border:none; cursor:pointer; }
+
+@media (max-width:760px){
+  .res-row{ flex-direction:column; }
+}
