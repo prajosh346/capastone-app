@@ -1,0 +1,13 @@
+.contact-page {
+  min-height: calc(100vh - 160px);
+  /* 160px ≈ header + footer height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+}
